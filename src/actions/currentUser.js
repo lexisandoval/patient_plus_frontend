@@ -17,9 +17,17 @@ export const login = credentials => {
         "Content-Type": "application/json"
 
       },
-      // body: JSON.stringify(credentials)
-      body: JSON.stringify({username: "fhduiad", password: "yppppp"})
-
+      body: JSON.stringify(credentials)
     })
+    .then(response => response.json())
+    .then(user => {
+      if (user.error) {
+        alert(user.error)
+      }
+      else {
+        dispatch(setCurrentUser(user))
+      }
+    })
+    .catch(console.log)
   }
 }
