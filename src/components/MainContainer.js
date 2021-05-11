@@ -3,7 +3,7 @@ import React from 'react';
 const MainContainer = () => {
   return (
     <div className="mainContainer">
-      yo
+      Main Container Content
     </div>
   )
 }
