@@ -1,4 +1,5 @@
 import { resetLoginForm } from "./loginForm.js"
+import { getMyDoctors } from "./myDoctors"
 
 // synchronous
 export const setCurrentUser = user => {
@@ -34,6 +35,7 @@ export const login = credentials => {
       }
       else {
         dispatch(setCurrentUser(user))
+        dispatch(getMyDoctors())
         dispatch(resetLoginForm())
       }
     })
@@ -67,6 +69,7 @@ export const getCurrentUser = () => {
       }
       else {
         dispatch(setCurrentUser(response.data))
+        dispatch(getMyDoctors(response.data))
       }
     })
     .catch(console.log)
