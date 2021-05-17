@@ -1,9 +1,11 @@
 import React from 'react';
+import MyDoctors from './MyDoctors.js'
 
 const MainContainer = () => {
   return (
     <div className="mainContainer">
-      Main Container Content
+      <h1>Doctors:</h1>
+      <MyDoctors />
     </div>
   )
 }
