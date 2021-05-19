@@ -12,13 +12,12 @@ const NavBar = ({ currentUser }) => {
         <div>{ currentUser ? <p>Welcome, {currentUser.attributes.name}!</p> : "" }</div>
         { currentUser ? <Logout/> : <Login/> }
       </div>
-      {/*   <div>{ currentUser ? <p>Doctors: {currentUser.attributes.doctors.name}!</p> : "" }</div> */}
     </div>
   )
 }
 
 // Loads current user state under props (logged in vs logged out)
-// Can use deconstruction below because I know the incoming argument in an object (state) coming from redux and I know it has a property called currentUser
+// Can use deconstruction below because I know the incoming argument is an object (state) coming from redux and I know it has a property called currentUser
 // i.e. state = { ..., 
 //                currentUser: { ... }
 //              }
