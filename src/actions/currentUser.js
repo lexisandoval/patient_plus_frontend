@@ -43,6 +43,32 @@ export const login = credentials => {
   }
 }
 
+export const signup = credentials => {
+  console.log("credentials are", credentials)
+  return dispatch => {
+    return fetch("http://localhost:3000/api/v1/signup", {
+      credentials: "include",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(credentials)
+    })
+    .then(response => response.json())
+    .then(user => {
+      if (user.error) {
+        alert(user.error)
+      }
+      else {
+        dispatch(setCurrentUser(user))
+        dispatch(getMyDoctors())
+        // dispatch(resetSignupForm())
+      }
+    })
+    .catch(console.log)
+  }
+}
+
 export const logout = () => {
   return (dispatch) => {
     dispatch(clearCurrentUser()) // optimistic, as soon as you know event is going to be triggered, change the frontend 
