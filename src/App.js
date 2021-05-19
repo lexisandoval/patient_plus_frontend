@@ -1,9 +1,10 @@
 import React from 'react'
 import './App.css';
 import NavBar from './components/NavBar';
-import MainContainer from './components/MainContainer';
+// import MainContainer from './components/MainContainer';
+// import Logout from './components/Logout';
 import Login from './components/Login';
-import Logout from './components/Logout';
+import Home from './components/Home';
 import MyDoctors from './components/MyDoctors';
 import Signup from './components/Signup';
 import { connect } from 'react-redux';
@@ -17,15 +18,14 @@ class App extends React.Component {
   }
 
   render() {
+    const { loggedIn } = this.props
     return (
       <Router>
         <div className="App"> 
           <NavBar/>
-          {/* <MainContainer/> */}
+          <Route exact path='/' render={() => loggedIn ? <MyDoctors/> : <Home/>}/>
           <Route exact path='/login' component={Login}/>
           <Route exact path='/signup' component={Signup}/>
-
-          {/* <Route exact path='/logout' component={Logout}/> */}
           <Route exact path='/my-doctors' component={MyDoctors}/>
         </div>
       </Router>
@@ -33,4 +33,10 @@ class App extends React.Component {
   }
 } 
 
-export default connect(null, { getCurrentUser })(App);
+const mapStateToProps = state => {
+  return({
+    loggedIn: !!state.currentUser
+  })
+}
+
+export default connect(mapStateToProps, { getCurrentUser })(App);
