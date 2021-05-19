@@ -5,7 +5,7 @@ import DoctorCard from './DoctorCard'
 const MyDoctors = props => {
   const doctorCards = props.doctors.map(d => <DoctorCard doctor={d} key={d.id}/>)
   return (
-    doctorCards.length > 0 ? doctorCards : null
+    doctorCards.length > 0 ? doctorCards : "You have not added any doctors yet."
   )
 }
 
