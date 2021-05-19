@@ -1,4 +1,5 @@
 import { resetLoginForm } from "./loginForm.js"
+import { resetSignupForm } from "./signupForm.js"
 import { getMyDoctors } from "./myDoctors"
 
 // synchronous
@@ -46,13 +47,16 @@ export const login = credentials => {
 export const signup = credentials => {
   console.log("credentials are", credentials)
   return dispatch => {
+    const userInfo = {
+      user: credentials
+    }
     return fetch("http://localhost:3000/api/v1/signup", {
       credentials: "include",
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(credentials)
+      body: JSON.stringify(userInfo)
     })
     .then(response => response.json())
     .then(user => {
@@ -61,8 +65,7 @@ export const signup = credentials => {
       }
       else {
         dispatch(setCurrentUser(user))
-        dispatch(getMyDoctors())
-        // dispatch(resetSignupForm())
+        dispatch(resetSignupForm())
       }
     })
     .catch(console.log)
