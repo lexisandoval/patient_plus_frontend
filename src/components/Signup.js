@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { updateSignupForm } from '../actions/signupForm';
 import { signup } from '../actions/currentUser';
 
-const Signup = ({ signupFormData, updateSignupForm, signup }) => {
+const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
   
   const handleInputChange = event => {
     const { name, value } = event.target
@@ -17,7 +17,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup }) => {
   const handleSumbit = event => {
     event.preventDefault()
 
-    signup(signupFormData)
+    signup(signupFormData, history)
   }
   
   return (
