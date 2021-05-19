@@ -18,7 +18,7 @@ export const clearCurrentUser = () => {
 
 
 // asynchronous
-export const login = credentials => {
+export const login = (credentials, history) => {
   console.log("credentials are", credentials)
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/login", {
@@ -38,6 +38,7 @@ export const login = credentials => {
         dispatch(setCurrentUser(user))
         dispatch(getMyDoctors())
         dispatch(resetLoginForm())
+        history.push('/') // redirect to / after log in
       }
     })
     .catch(console.log)
