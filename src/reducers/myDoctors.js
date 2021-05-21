@@ -4,6 +4,8 @@ const exp = (state = [], action) => {
       return action.doctors
     case "CLEAR_DOCTORS":
       return []
+    case "ADD_DOCTOR":
+      return state.doctors.concat(action.doctors)
     default:
       return state
   }
