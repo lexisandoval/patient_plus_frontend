@@ -1,6 +1,7 @@
 import { resetLoginForm } from "./loginForm.js"
 import { resetSignupForm } from "./signupForm.js"
 import { getMyDoctors } from "./myDoctors"
+import { clearDoctors } from "./myDoctors"
 
 // synchronous
 export const setCurrentUser = user => {
@@ -77,6 +78,7 @@ export const signup = (credentials, history) => {
 export const logout = () => {
   return (dispatch) => {
     dispatch(clearCurrentUser()) // optimistic, as soon as you know event is going to be triggered, change the frontend 
+    dispatch(clearDoctors())
     return fetch("http://localhost:3000/api/v1/logout", {
       credentials: "include",
       method: "DELETE"
