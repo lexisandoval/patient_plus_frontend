@@ -33,6 +33,10 @@
   flex-direction: row;
 }
 
+a.active {
+  color: green;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
