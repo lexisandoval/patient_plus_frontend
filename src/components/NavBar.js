@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Login from './Login';
+import { NavLink } from 'react-router-dom';
 import Logout from './Logout';
 
 // By desctructuring, you get props and dont explicitly need to say props.whatever
@@ -9,8 +9,10 @@ const NavBar = ({ currentUser }) => {
   return (
     <div>
       <div className="nav">
-        <div>{ currentUser ? <p>Welcome, {currentUser.attributes.name}!</p> : "" }</div>
-        { currentUser ? <Logout/> : <Login/> }
+        {/* <div>{ currentUser ? <p>Welcome, {currentUser.attributes.name}!</p> : "" }</div> */}
+        <NavLink to="/doctors">My Doctors  |  </NavLink>
+        <NavLink to="/doctors/new">  Add A Doctor  |  </NavLink>
+        { currentUser ? <Logout/> : null }
       </div>
     </div>
   )
