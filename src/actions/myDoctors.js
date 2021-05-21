@@ -6,6 +6,12 @@ export const setMyDoctors = doctors => {
   }
 }
 
+export const clearDoctors = () => {
+  return {
+    type: "CLEAR_DOCTORS"
+  }
+}
+
 // asynchronous
 export const getMyDoctors = () => {
   return dispatch => {
