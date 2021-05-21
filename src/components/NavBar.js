@@ -10,8 +10,8 @@ const NavBar = ({ currentUser }) => {
     <div>
       <div className="nav">
         {/* <div>{ currentUser ? <p>Welcome, {currentUser.attributes.name}!</p> : "" }</div> */}
-        <NavLink to="/doctors">My Doctors  |  </NavLink>
-        <NavLink to="/doctors/new">  Add A Doctor  |  </NavLink>
+        <NavLink exact activeClassName="active" to="/doctors">My Doctors  |  </NavLink>
+        <NavLink exact activeClassName="active" to="/doctors/new">  Add A Doctor  |  </NavLink>
         { currentUser ? <Logout/> : null }
       </div>
     </div>
