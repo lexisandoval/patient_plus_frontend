@@ -7,9 +7,10 @@ import Login from './components/Login';
 import Home from './components/Home';
 import MyDoctors from './components/MyDoctors';
 import Signup from './components/Signup';
+import NewDoctorForm from './components/NewDoctorForm';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 class App extends React.Component {
 
@@ -22,11 +23,13 @@ class App extends React.Component {
     return (
       <Router>
         <div className="App"> 
-          <NavBar/>
-          <Route exact path='/' render={() => loggedIn ? <MyDoctors/> : <Home/>}/>
-          <Route exact path='/login' component={Login}/>
-          <Route exact path='/signup' component={Signup}/>
-          <Route exact path='/my-doctors' component={MyDoctors}/>
+          { loggedIn ? <NavBar/> : <Home/> }
+          <Switch>
+            <Route exact path='/login' component={Login}/>
+            <Route exact path='/signup' component={Signup}/>
+            <Route exact path='/doctors' component={MyDoctors}/>
+            <Route exact path='/doctors/new' component={NewDoctorForm}/>
+          </Switch>
         </div>
       </Router>
     );
