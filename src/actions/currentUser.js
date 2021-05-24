@@ -47,7 +47,6 @@ export const login = (credentials, history) => {
 }
 
 export const signup = (credentials, history) => {
-  console.log("credentials are", credentials)
   return dispatch => {
     const userInfo = {
       user: credentials

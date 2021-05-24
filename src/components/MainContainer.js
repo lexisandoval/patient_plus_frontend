@@ -1,13 +1,19 @@
 import React from 'react';
-import MyDoctors from './MyDoctors.js'
+import { connect } from 'react-redux';
 
-const MainContainer = () => {
+const MainContainer = ({ currentUser }) => {
   return (
+    currentUser ? 
     <div className="mainContainer">
-      <h1>Doctors:</h1>
-      <MyDoctors />
-    </div>
+      <h1>Welcome back, {currentUser.attributes.name}!</h1>
+    </div> : null
   )
 }
 
-export default MainContainer;
+const mapStateToProps = ({ currentUser }) => {
+  return {
+    currentUser
+  }
+}
+
+export default connect(mapStateToProps)(MainContainer);
