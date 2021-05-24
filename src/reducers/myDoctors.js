@@ -5,7 +5,9 @@ const exp = (state = [], action) => {
     case "CLEAR_DOCTORS":
       return []
     case "ADD_DOCTOR":
-      return state.doctors.concat(action.doctors)
+      return state.concat(action.doctor)
+    case "UPDATE_DOCTOR":
+      return state.map(doctor => doctor.id === action.doctor.id ? action.doctor : doctor)
     default:
       return state
   }
