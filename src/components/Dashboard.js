@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 
 const Dashboard = () => (
   <div className="space">
-    <h1>Welcome back!</h1>
+    <h1 style={{fontWeight:600}}>Welcome back!</h1>
     <h2 className="subhead">Here's a preview of your medical information:</h2>
     <Container>
       <Row>
