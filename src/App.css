@@ -29,12 +29,91 @@
 }
 
 .nav {
-  display: flex;
-  flex-direction: row;
+  font-size: 130% !important;
+  color: white !important;
+  background-color: rgb(115, 215, 255) !important;
 }
 
-a.active {
-  color: green;
+.btn {
+  color: rgb(115, 215, 255) !important;
+  background-color: white !important;
+  border-width: 0 !important;
+}
+
+.btn:hover {
+  background-color: rgb(238, 238, 238) !important;
+}
+
+.btnAdd {
+  color: white !important;
+  background-color: rgb(115, 215, 255) !important;
+  border-width: 0 !important;
+  margin-bottom: 4%;
+
+}
+
+.btnAdd:hover {
+  background-color: rgb(96, 182, 216) !important;
+}
+
+.space {
+  margin-top: 3%;
+}
+
+.heading {
+  color: rgb(115, 215, 255) !important;
+  text-shadow: 2px 2px black;
+  margin-bottom: 2%;
+}
+
+.black {
+  color: black;
+  font-weight: bold;
+  font-size: 70%;
+}
+
+.blue {
+  color: rgb(115, 215, 255) !important;
+  text-decoration: none !important;
+}
+
+.blue:hover {
+  color: rgb(96, 182, 216) !important;
+}
+
+.navLink {
+  color:white !important;
+  text-decoration: none !important;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.navLink:hover {
+  color:rgb(238, 238, 238) !important;
+}
+
+.refLink {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.refLink:hover {
+  text-decoration: none !important;
+  color: rgb(102, 102, 102) !important;
+}
+
+.subhead {
+  font-weight: 150;
+  margin: 2% 0 2% 0;
+}
+
+.btnAddUpdate {
+  background-color: white !important;
+  color: rgb(115, 215, 255) !important;
+}
+
+.home {
+  margin: 10%;
 }
 
 @keyframes App-logo-spin {
