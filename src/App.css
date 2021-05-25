@@ -81,6 +81,10 @@
   color: rgb(96, 182, 216) !important;
 }
 
+.noshadow {
+  text-shadow: 0;
+}
+
 .navLink {
   color:white !important;
   text-decoration: none !important;
