@@ -3,17 +3,21 @@ import thunk from 'redux-thunk';
 import usersReducer from './reducers/users';
 import currentUser from './reducers/currentUser';
 import loginForm from './reducers/loginForm';
-import myDoctors from './reducers/myDoctors';
 import signupForm from './reducers/signupForm';
-import doctorForm from './reducers/doctorForm'
+import myDoctors from './reducers/doctors/myDoctors';
+import doctorForm from './reducers/doctors/doctorForm';
+import myConditions from './reducers/conditions/myConditions';
+import conditionForm from './reducers/conditions/conditionForm';
 
 const reducer = combineReducers({
   users: usersReducer, // "users" shows up in store, points to usersReducer in users.js file
   currentUser,
   loginForm,
-  myDoctors, 
   signupForm,
-  doctorForm
+  myDoctors, 
+  doctorForm,
+  myConditions,
+  conditionForm
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
