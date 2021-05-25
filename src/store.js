@@ -6,6 +6,10 @@ import loginForm from './reducers/loginForm';
 import signupForm from './reducers/signupForm';
 import myDoctors from './reducers/doctors/myDoctors';
 import doctorForm from './reducers/doctors/doctorForm';
+
+import myMedications from './reducers/medications/myMedications';
+import medicationForm from './reducers/medications/medicationForm'
+
 import myConditions from './reducers/conditions/myConditions';
 import conditionForm from './reducers/conditions/conditionForm';
 
@@ -16,6 +20,8 @@ const reducer = combineReducers({
   signupForm,
   myDoctors, 
   doctorForm,
+  myMedications,
+  medicationForm,
   myConditions,
   conditionForm
 })
