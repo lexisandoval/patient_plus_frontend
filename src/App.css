@@ -81,6 +81,10 @@
   color: rgb(96, 182, 216) !important;
 }
 
+.plus {
+  padding-top: 5%;
+}
+
 .noshadow {
   text-shadow: 0;
 }
