@@ -10,7 +10,7 @@ import Nav from 'react-bootstrap/Nav'
 const NavBar = ({ currentUser }) => {
   return (
     <Navbar collapseOnSelect expand="lg" className="nav">
-      <Navbar.Brand className="mr-auto nav" href="/dashboard"><span>PatientPlus</span><span className="black">+</span></Navbar.Brand>
+      <NavLink className="mr-auto nav navLink" to="/dashboard"><span>PatientPlus</span><span className="black plus">+</span></NavLink>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mx-auto">
