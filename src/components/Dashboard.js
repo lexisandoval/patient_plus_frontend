@@ -4,9 +4,9 @@ import MyDoctors from '../components/doctors/MyDoctors'
 import { Container, Row, Col } from 'react-bootstrap'
 import { connect } from 'react-redux';
 
-const Dashboard = ({ currentUser }) => (
+const Dashboard = () => (
   <div className="space">
-    { currentUser ? <h1>Welcome back, {currentUser.attributes.name}!</h1> : null }
+    <h1>Welcome back!</h1>
     <h2 className="subhead">Here's a preview of your medical information:</h2>
     <Container>
       <Row>
