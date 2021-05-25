@@ -22,10 +22,14 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
   
   return (
     <form onSubmit={handleSumbit}>
-      <input placeholder="name" value={signupFormData.name} name="name" type="text" onChange={handleInputChange}></input><br/><br/>
-      <input placeholder="username" value={signupFormData.username} name="username" type="text" onChange={handleInputChange}></input><br/><br/>
-      <input placeholder="email" value={signupFormData.email} name="email" type="text" onChange={handleInputChange}></input><br/><br/>
-      <input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={handleInputChange}></input><br/><br/>
+      <label>Name<br/>
+      <input value={signupFormData.name} name="name" type="text" onChange={handleInputChange}></input></label><br/><br/>
+      <label>Username<br/>
+      <input value={signupFormData.username} name="username" type="text" onChange={handleInputChange}></input></label><br/><br/>
+      <label>Email<br/>
+      <input value={signupFormData.email} name="email" type="text" onChange={handleInputChange}></input></label><br/><br/>
+      <label>Password<br/>
+      <input value={signupFormData.password} name="password" type="text" onChange={handleInputChange}></input></label><br/><br/>
       <input className="btnAddUpdate" value="Sign Up" type="submit"></input>
     </form>
   )
