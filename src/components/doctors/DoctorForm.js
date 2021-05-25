@@ -24,9 +24,9 @@ const DoctorForm = ({ formData, updateNewDoctorForm, handleSubmit, editMode, doc
       }}>
         {editMode ? <h1 className="heading">Edit Doctor</h1> : <h1 className="heading">Add a Doctor</h1>}
         <br/>
-        <input name="name" onChange={handleChange} value={name} placeholder="Name"/><br/>
-        <input name="phone_number" onChange={handleChange} value={phone_number} placeholder="Phone Number"/><br/>
-        <input name="specialty" onChange={handleChange} value={specialty} placeholder="Specialty"/><br/>
+        <input name="name" onChange={handleChange} value={name} placeholder="Name"/><br/><br/>
+        <input name="phone_number" onChange={handleChange} value={phone_number} placeholder="Phone Number"/><br/><br/>
+        <input name="specialty" onChange={handleChange} value={specialty} placeholder="Specialty"/><br/><br/>
         <input name="location" onChange={handleChange} value={location} placeholder="Location"/><br/><br/>
         <input className="btnAddUpdate" type="submit" value={ editMode ? "Update" : "Add Doctor" }/>
       </form>
