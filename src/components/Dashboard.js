@@ -1,7 +1,8 @@
 import React from 'react';
-import MyConditions from '../components/conditions/MyConditions'
-import MyDoctors from '../components/doctors/MyDoctors'
-import { Container, Row, Col } from 'react-bootstrap'
+import MyConditions from '../components/conditions/MyConditions';
+import MyDoctors from '../components/doctors/MyDoctors';
+import MyMedications from '../components/medications/MyMedications';
+import { Container, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
 const Dashboard = () => (
@@ -14,8 +15,11 @@ const Dashboard = () => (
           <MyConditions/>
         </Col>
         <Col>
+          <MyMedications/>
+        </Col>
+        <Col>
           <MyDoctors/>
-      </Col>
+        </Col>
       </Row>
     </Container>
   </div>
