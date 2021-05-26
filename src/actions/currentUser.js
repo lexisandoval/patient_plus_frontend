@@ -1,7 +1,11 @@
 import { resetLoginForm } from "./loginForm.js"
 import { resetSignupForm } from "./signupForm.js"
-import { getMyDoctors } from "./myDoctors"
-import { clearDoctors } from "./myDoctors"
+import { getMyDoctors } from "./doctors/myDoctors"
+import { clearDoctors } from "./doctors/myDoctors"
+import { getMyConditions } from "./conditions/myConditions"
+import { clearConditions } from "./conditions/myConditions"
+import { getMyMedications } from "./medications/myMedications"
+import { clearMedications } from "./medications/myMedications"
 
 // synchronous
 export const setCurrentUser = user => {
@@ -38,8 +42,10 @@ export const login = (credentials, history) => {
       else {
         dispatch(setCurrentUser(user))
         dispatch(getMyDoctors())
+        dispatch(getMyConditions())
+        dispatch(getMyMedications())
         dispatch(resetLoginForm())
-        history.push('/') // redirect to / after log in
+        history.push('/dashboard') // redirect to / after log in
       }
     })
     .catch(console.log)
@@ -78,6 +84,8 @@ export const logout = () => {
   return (dispatch) => {
     dispatch(clearCurrentUser()) // optimistic, as soon as you know event is going to be triggered, change the frontend 
     dispatch(clearDoctors())
+    dispatch(clearConditions())
+    dispatch(clearMedications())
     return fetch("http://localhost:3000/api/v1/logout", {
       credentials: "include",
       method: "DELETE"
@@ -102,6 +110,8 @@ export const getCurrentUser = () => {
       else {
         dispatch(setCurrentUser(response.data))
         dispatch(getMyDoctors(response.data))
+        dispatch(getMyConditions(response.data))
+        dispatch(getMyMedications(response.data))
       }
     })
     .catch(console.log)
