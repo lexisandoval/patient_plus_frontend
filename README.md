@@ -1,6 +1,6 @@
 # PatientPlus
 
-PatientPlus is an SPA that allows users to log medical information.
+PatientPlus is a React SPA that allows users to log medical information.
 
 ## Installation
 
