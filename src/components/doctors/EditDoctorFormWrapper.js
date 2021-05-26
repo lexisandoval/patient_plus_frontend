@@ -1,18 +1,18 @@
 import React from 'react';
 import DoctorForm from './DoctorForm';
 import { updateDoctor, deleteDoctor } from '../../actions/doctors/myDoctors';
-import { setFormDataForEdit, resetNewDoctorForm } from '../../actions/doctors/doctorForm'
+import { setDoctorFormDataForEdit, resetNewDoctorForm } from '../../actions/doctors/doctorForm'
 
 import { connect } from 'react-redux';
 
 class EditDoctorFormWrapper extends React.Component {
 
   componentDidMount() {
-    this.props.doctor && this.props.setFormDataForEdit(this.props.doctor)
+    this.props.doctor && this.props.setDoctorFormDataForEdit(this.props.doctor)
   }
 
   componentDidUpdate(prevProps) {
-    this.props.doctor && !prevProps.doctor && this.props.setFormDataForEdit(this.props.doctor)
+    this.props.doctor && !prevProps.doctor && this.props.setDoctorFormDataForEdit(this.props.doctor)
   }
 
   componentWillUnmount() {
@@ -32,9 +32,9 @@ class EditDoctorFormWrapper extends React.Component {
     const doctorId = doctor ? doctor.id : null
     return <>
             <DoctorForm editMode handleSubmit={this.handleSubmit}/><br/>
-            <button style={{color: "red"}} onClick={() => deleteDoctor(doctorId, history)}>Delete</button>
+            <button style={{color: "red", backgroundColor: "white"}} onClick={() => deleteDoctor(doctorId, history)}>Delete</button>
           </>
   }
 };
 
-export default connect(null, { updateDoctor, setFormDataForEdit, resetNewDoctorForm, deleteDoctor })(EditDoctorFormWrapper);
+export default connect(null, { updateDoctor, setDoctorFormDataForEdit, resetNewDoctorForm, deleteDoctor })(EditDoctorFormWrapper);

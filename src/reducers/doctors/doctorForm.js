@@ -14,7 +14,7 @@ const exp = (state = initialState, action) => {
       }
     case "RESET_NEW_DOCTOR_FORM":
       return initialState
-    case "SET_FORM_DATA_FOR_EDIT":
+    case "SET_DOCTOR_FORM_DATA_FOR_EDIT":
       return action.doctorFormData
     default:
       return state

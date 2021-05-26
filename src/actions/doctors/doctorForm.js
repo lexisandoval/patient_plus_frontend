@@ -13,7 +13,7 @@ export const resetNewDoctorForm = () => {
   }
 }
 
-export const setFormDataForEdit = doctor => {
+export const setDoctorFormDataForEdit = doctor => {
   const doctorFormData = {
     name: doctor.attributes.name,
     phone_number: doctor.attributes.phone_number,
@@ -22,7 +22,7 @@ export const setFormDataForEdit = doctor => {
   }
 
   return {
-    type: "SET_FORM_DATA_FOR_EDIT",
+    type: "SET_DOCTOR_FORM_DATA_FOR_EDIT",
     doctorFormData
   }
 }
