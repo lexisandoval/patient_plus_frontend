@@ -31,11 +31,11 @@
 .nav {
   font-size: 130% !important;
   color: white !important;
-  background-color: rgb(115, 215, 255) !important;
+  background-color: rgb(115, 192, 255) !important;
 }
 
 .btn {
-  color: rgb(115, 215, 255) !important;
+  color: rgb(115, 192, 255) !important;
   background-color: white !important;
   border-width: 0 !important;
 }
@@ -46,14 +46,14 @@
 
 .btnAdd {
   color: white !important;
-  background-color: rgb(115, 215, 255) !important;
+  background-color: rgb(115, 192, 255) !important;
   border-width: 0 !important;
   margin-bottom: 4%;
 
 }
 
 .btnAdd:hover {
-  background-color: rgb(96, 182, 216) !important;
+  background-color: rgb(97, 163, 216) !important;
 }
 
 .space {
@@ -61,7 +61,7 @@
 }
 
 .heading {
-  color: rgb(115, 215, 255) !important;
+  color: rgb(115, 192, 255) !important;
   text-shadow: 2px 2px black;
   margin-bottom: 2%;
 }
@@ -73,12 +73,12 @@
 }
 
 .blue {
-  color: rgb(115, 215, 255) !important;
+  color: rgb(115, 192, 255) !important;
   text-decoration: none !important;
 }
 
 .blue:hover {
-  color: rgb(96, 182, 216) !important;
+  color: rgb(97, 163, 216) !important;
 }
 
 .plus {
@@ -117,7 +117,7 @@
 
 .btnAddUpdate {
   background-color: white !important;
-  color: rgb(115, 215, 255) !important;
+  color: rgb(115, 192, 255) !important;
 }
 
 .home {
