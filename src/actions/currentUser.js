@@ -21,7 +21,6 @@ export const clearCurrentUser = () => {
   }
 }
 
-
 // asynchronous
 export const login = (credentials, history) => {
   console.log("credentials are", credentials)
@@ -45,7 +44,7 @@ export const login = (credentials, history) => {
         dispatch(getMyConditions())
         dispatch(getMyMedications())
         dispatch(resetLoginForm())
-        history.push('/dashboard') // redirect to / after log in
+        history.push('/dashboard') // redirect to /dashboard after log in
       }
     })
     .catch(console.log)

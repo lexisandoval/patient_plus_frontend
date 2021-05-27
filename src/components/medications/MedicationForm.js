@@ -28,24 +28,32 @@ const MedicationForm = ({ formData, updateNewMedicationForm, handleSubmit, editM
         handleSubmit(formData)
       }}>
         {editMode ? <h1 className="heading">Edit Medication</h1> : <h1 className="heading">Add a Medication</h1>}
+
         <p>If you don't see your doctor or condition below, you may</p>
         <span>
           <Link to="/doctors/new" className="blue"> add a doctor here </Link>or
           <Link to="/conditions/new" className="blue"> add a condition here</Link>.
         </span>
         <br/><br/>
+
         <label>Name:<br/>
         <input name="name" onChange={handleChange} value={name}/></label><br/><br/>
+
         <label>Prescription (mg, mcg, or ml):<br/>
         <input name="prescription" onChange={handleChange} value={prescription}/></label><br/><br/>
+
         <label>Condition:<br/>
         <select name="condition" onChange={handleChange} value={condition}>
-         { conditions }
+          <option value=""></option>
+          { conditions }
         </select></label><br/><br/>
+
         <label>Doctor:<br/>
         <select name="doctor" onChange={handleChange} value={doctor}>
-        { doctors }
+          <option value=""></option>
+          { doctors }
         </select></label><br/><br/>
+
         <input className="btnAddUpdate" type="submit" value={ editMode ? "Update" : "Add Medication" }/>
       </form>
     </div>
