@@ -13,6 +13,11 @@ const Dashboard = () => (
     <Container>
       <Row>
         <Col>
+          <Link to="/doctors" className="nounderline"><h1 className="heading">Doctors</h1></Link>
+          <br/>
+          <MyDoctors/>
+        </Col>
+        <Col>
           <Link to="/conditions" className="nounderline"><h1 className="heading">Conditions</h1></Link>
           <br/>
           <MyConditions/>
@@ -21,11 +26,6 @@ const Dashboard = () => (
           <Link to="/medications" className="nounderline"><h1 className="heading">Medications</h1></Link>
           <br/>
           <MyMedications/>
-        </Col>
-        <Col>
-          <Link to="/doctors" className="nounderline"><h1 className="heading">Doctors</h1></Link>
-          <br/>
-          <MyDoctors/>
         </Col>
       </Row>
     </Container>
