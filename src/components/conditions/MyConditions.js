@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 const MyConditions = props => {
 
@@ -9,6 +10,9 @@ const MyConditions = props => {
   return (
     <div className="space">
       <h1 className="heading">Conditions</h1>
+      <br/>
+      <Link to="/doctors/new"><Button className="btnAdd">Add A Doctor</Button></Link>
+      <br/><br/>
       {conditionCards.length > 0 ? conditionCards : <p>You have not added any conditions yet.</p>}
     </div>
   )
