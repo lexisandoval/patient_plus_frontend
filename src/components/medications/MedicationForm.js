@@ -4,10 +4,8 @@ import { updateNewMedicationForm } from '../../actions/medications/medicationFor
 import { connect } from 'react-redux';
 
 // 3. Now redux gives a prop called updateNewTripForm which redux will dispatch when invoked
-const MedicationForm = ({ formData, updateNewMedicationForm, handleSubmit, editMode, medication, userId }) => {
+const MedicationForm = ({ formData, updateNewMedicationForm, handleSubmit, editMode,  myConditions, myDoctors }) => {
   
-  const { name, prescription, doctor, condition } = formData
-
   const handleChange = event => {
     const { name, value } = event.target
     // 4. Line below is not an invocation of the action creator, rather
@@ -15,6 +13,12 @@ const MedicationForm = ({ formData, updateNewMedicationForm, handleSubmit, editM
     //    If a match is hit in the switch statement (in reducer), then store is changed and react re-renders
     updateNewMedicationForm(name, value)
   }
+
+  const { name, prescription, doctor, condition } = formData
+
+  const conditions = myConditions.map(c => <option key={c.id} value={c.id}>{c.attributes.name}</option>)
+
+  const doctors = myDoctors.map(d => <option key={d.id} value={d.id}>{d.attributes.name}</option>)
 
   return (
     <div className="space">
@@ -29,12 +33,12 @@ const MedicationForm = ({ formData, updateNewMedicationForm, handleSubmit, editM
         <label>Prescription (mg, mcg, or ml):<br/>
         <input name="prescription" onChange={handleChange} value={prescription}/></label><br/><br/>
         <label>Condition:<br/>
-        <select name="condition" value={condition}>
-         {/* mirror collection select */}
+        <select name="condition" onChange={handleChange} value={condition}>
+         { conditions }
         </select></label><br/><br/>
         <label>Doctor:<br/>
-        <select name="doctor" value={doctor}>
-          
+        <select name="doctor" onChange={handleChange} value={doctor}>
+        { doctors }
         </select></label><br/><br/>
         <input className="btnAddUpdate" type="submit" value={ editMode ? "Update" : "Add Medication" }/>
       </form>
@@ -47,6 +51,8 @@ const mapStateToProps = state => {
 
   return {
     formData: state.medicationForm,
+    myDoctors: state.myDoctors,
+    myConditions: state.myConditions,
     userId
   }
 }
