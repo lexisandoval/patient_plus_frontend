@@ -43,13 +43,13 @@ const MedicationForm = ({ formData, updateNewMedicationForm, handleSubmit, editM
         <input name="prescription" onChange={handleChange} value={prescription}/></label><br/><br/>
 
         <label>Condition:<br/>
-        <select name="condition" onChange={handleChange} value={condition}>
+        <select name="condition_id" onChange={handleChange} value={condition}>
           <option value=""></option>
           { conditions }
         </select></label><br/><br/>
 
         <label>Doctor:<br/>
-        <select name="doctor" onChange={handleChange} value={doctor}>
+        <select name="doctor_id" onChange={handleChange} value={doctor}>
           <option value=""></option>
           { doctors }
         </select></label><br/><br/>

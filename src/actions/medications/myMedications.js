@@ -63,7 +63,9 @@ export const createMedication = (medicationData, history) => {
     const sendableMedicationData = {
         name: medicationData.name,
         prescription: medicationData.prescription,
-        user_id: medicationData.userId
+        user_id: medicationData.userId,
+        condition_id: medicationData.condition_id,
+        doctor_id: medicationData.doctor_id
     }
     return fetch("http://localhost:3000/api/v1/medications", {
       credentials: "include",
@@ -91,7 +93,9 @@ export const updateMedication = (medicationData, history) => {
   return dispatch => {
     const sendableMedicationData = {
       name: medicationData.name,
-      prescription: medicationData.prescription
+      prescription: medicationData.prescription,
+      condition_id: medicationData.condition_id,
+      doctor_id: medicationData.doctor_id
     }
     return fetch(`http://localhost:3000/api/v1/medications/${medicationData.medicationId}`, {
       credentials: "include",
