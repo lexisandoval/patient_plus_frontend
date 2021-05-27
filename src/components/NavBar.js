@@ -15,11 +15,8 @@ const NavBar = ({ currentUser }) => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mx-auto">
           <NavLink exact className="navLink" to="/doctors">My Doctors</NavLink>
-          {/* <Nav.Link exact className="navLink" href="/doctors/new">Add A Doctor</Nav.Link> */}
           <NavLink exact className="navLink" to="/conditions">My Conditions</NavLink>
           <NavLink exact className="navLink" to="/medications">My Medications</NavLink>
-          <NavLink exact className="navLink" to="/conditions/new">Add A Condition</NavLink>
-          <NavLink exact className="navLink" to="/medications/new">Add A Medication</NavLink>
         </Nav>
         { currentUser ? <Logout/> : null }
       </Navbar.Collapse>
