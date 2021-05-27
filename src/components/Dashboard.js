@@ -4,6 +4,7 @@ import MyDoctors from '../components/doctors/MyDoctors';
 import MyMedications from '../components/medications/MyMedications';
 import { Container, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 const Dashboard = () => (
   <div className="space">
@@ -12,17 +13,17 @@ const Dashboard = () => (
     <Container>
       <Row>
         <Col>
-          <h1 className="heading">Conditions</h1>
+          <Link to="/conditions" className="nounderline"><h1 className="heading">Conditions</h1></Link>
           <br/>
           <MyConditions/>
         </Col>
         <Col>
-          <h1 className="heading">Medications</h1>
+          <Link to="/medications" className="nounderline"><h1 className="heading">Medications</h1></Link>
           <br/>
           <MyMedications/>
         </Col>
         <Col>
-          <h1 className="heading">Doctors</h1>
+          <Link to="/doctors" className="nounderline"><h1 className="heading">Doctors</h1></Link>
           <br/>
           <MyDoctors/>
         </Col>
