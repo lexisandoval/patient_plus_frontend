@@ -12,12 +12,18 @@ const Dashboard = () => (
     <Container>
       <Row>
         <Col>
+          <h1 className="heading">Conditions</h1>
+          <br/>
           <MyConditions/>
         </Col>
         <Col>
+          <h1 className="heading">Medications</h1>
+          <br/>
           <MyMedications/>
         </Col>
         <Col>
+          <h1 className="heading">Doctors</h1>
+          <br/>
           <MyDoctors/>
         </Col>
       </Row>
