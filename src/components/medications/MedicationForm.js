@@ -2,6 +2,7 @@ import React from 'react';
 // 1. Grab action creator (function that produces an action aka a POJO)
 import { updateNewMedicationForm } from '../../actions/medications/medicationForm';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 // 3. Now redux gives a prop called updateNewTripForm which redux will dispatch when invoked
 const MedicationForm = ({ formData, updateNewMedicationForm, handleSubmit, editMode,  myConditions, myDoctors }) => {
@@ -21,13 +22,18 @@ const MedicationForm = ({ formData, updateNewMedicationForm, handleSubmit, editM
   const doctors = myDoctors.map(d => <option key={d.id} value={d.id}>{d.attributes.name}</option>)
 
   return (
-    <div className="space">
+    <div className="space below">
       <form onSubmit={event => {
         event.preventDefault()
         handleSubmit(formData)
       }}>
         {editMode ? <h1 className="heading">Edit Medication</h1> : <h1 className="heading">Add a Medication</h1>}
-        <br/>
+        <p>If you don't see your doctor or condition below, you may</p>
+        <span>
+          <Link to="/doctors/new" className="blue"> add a doctor here </Link>or
+          <Link to="/conditions/new" className="blue"> add a condition here</Link>.
+        </span>
+        <br/><br/>
         <label>Name:<br/>
         <input name="name" onChange={handleChange} value={name}/></label><br/><br/>
         <label>Prescription (mg, mcg, or ml):<br/>
