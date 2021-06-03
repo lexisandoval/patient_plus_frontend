@@ -22,7 +22,7 @@ const ConditionForm = ({ formData, updateNewConditionForm, handleSubmit, editMod
         event.preventDefault()
         handleSubmit(formData)
       }}>
-        {editMode ? <h1>Edit Condition</h1> : <h1 className="heading">Add a Condition</h1>}
+        {editMode ? <h1 className="heading">Edit Condition</h1> : <h1 className="heading">Add a Condition</h1>}
         <br/>
         <label>Name:<br/>
         <input name="name" onChange={handleChange} value={name}/></label><br/><br/>

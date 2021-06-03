@@ -72,7 +72,7 @@ export const signup = (credentials, history) => {
       else {
         dispatch(setCurrentUser(user))
         dispatch(resetSignupForm())
-        history.push('/') // redirect to / after log in
+        history.push('/dashboard') // redirect to /dashboard after log in
       }
     })
     .catch(console.log)
